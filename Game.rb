@@ -9,8 +9,8 @@ class Game
     @current_player = @player_one
   end
   #Returns true if the answer is correct
-  def isAnswer?(guess, question_to_ask)
-    if guess == @question_to_ask.answer
+  def isAnswer?(answer, question_to_ask)
+    if answer == @question_to_ask.answer
       puts "#{@current_player.name}: Good job!"
       return true
     else
@@ -21,8 +21,8 @@ class Game
   #Asks the questions and checks if the answer is correct
   def ask_question()
     puts "#{@current_player.name}: #{@question_to_ask.question}"
-    guess = self.get_answer()
-    self.isAnswer?(guess, @question_to_ask)
+    answer = self.get_answer()
+    self.isAnswer?(answer, @question_to_ask)
   end
   #Gets user input
   def get_answer()
@@ -50,7 +50,6 @@ class Game
     puts "Goodbye!"
   end
   
-
   # Start of the game
   def game_start()
     loop do 
